@@ -188,3 +188,51 @@ Drastically means, High utilizations of resources. for eg:
 * Message queues at capacity
 * Maximum number of IO connections
 * ...
+
+
+### Scalability:
+
+The measure of a system ability to the growing amount of work, in an easy and cost effective ways by adding more resources to the system.
+
+When we plot amount of work vs resources, we have to get linear Scalability (not 100%)
+
+There are three orthogonal types of scalability:
+1. Vertical (Scale Up)
+2. Horizontal (Scale Out)
+3. Team/Organization
+
+
+#### 1. Vertical Scalability
+Adding or upgrading resources on a single computer, to allow our system to handle higher traffic or load
+
+For eg: Increasing the database's CPU or memory or network card for higher bandwidth
+
+**Pro:**
+* Any application can benefit from this
+* No code changes required
+* Migrations is very easy as it is in the same computer
+
+**Cons:**
+* Scope is limited
+* Centralized system (single point of failure), so cannot provide High Availability, and Fault Tolerance
+
+#### 2. Horizontal Scalability
+Adding more computer (machine) with required resources to handle in a distributed way
+
+**Pros:**
+* No limit on scalability
+* It is easy to add/remove machines
+* If designed correctly, we can get High Availability, and Fault Tolerance
+
+**Cons:**
+* Initial code changes to support distributed system
+* Increase complexity and coordination overhead
+
+#### 3. Team/Organizational Scalability
+The measure of a system ability to the growing amount of work **(features, testing, bug fixes, releases)**, in an easy and cost effective ways by adding more resources **(Engineers)** to the system.
+
+So increasing engineers working on a system will help to scale the system faster. but adding more and more engineers will eventually degrade the performance.
+or break code base into monolithic into multiple services.
+
+
+
