@@ -261,3 +261,50 @@ Similarly, if the business provides services to other business and provide low a
 99.9 is referred as 3 "nines"
 99.99 is referred as 4 "nines"
 <img width="1084" alt="image" src="https://user-images.githubusercontent.com/10495294/170861938-3c96150a-98e9-42e8-939b-57492f09be5d.png">
+
+
+### Fault Tolerance and High Availabilty
+#### What Prevent us from Achieving HA - Source of Failure
+1. Humar Error
+    * Pushing wrong config, running wrong cmd, untested code
+2. Software Error
+    * Long garbage collection, out of memory error, null pointer exception, segmentation faults
+3. Hardware failures
+    * Due shelf life, hardware (servers, routers, storage) breaking down, power outages, network failures because of - infra issues and general congestions 
+
+#### How to achieve Hight Availabilty?
+Failures will happen despite adding process around Human errors. 
+Fault Tolerance is the way to get High Availability.
+
+#### Fault Tolerance:
+Fault Tolerance enables our system to remain operational and available to users despite failures within one ore multiple components.
+
+It revolves around 3 tactics:
+1. Failure Prevention
+2. Failure detection and isolation
+3. Recovery
+
+##### 1. Failure Prevention:
+- Eliminate Single point of failure through Replications (store multiple replica in multiple db) and Redundancy (running multiple instance of service)
+    * Spatial Redundancy -> Replicas of our application in multiple instances
+    * Time Redundancy -> Retry the request multiple time until it succeed or give up
+    * Two stragies used widely in the industry are
+        - Active - Active architecture (multiple replica to store)
+        - Active - Passive Architecture (primary and secondary)
+
+##### 2. Failure detection and isolation:
+If any one of our system failed for any reaosn, it should be detect and isolated so that no further request is passed to it.
+to detect, we will have monitoring system, which will be keeping tract of each servers in the network for your system availabilty through heart beat or health checks. It can sometime isolate an healthy system just because of network or any communication issues. Those are called **False-Positive**. But is fine until it does reverse when system is failed, but not detected.
+
+##### 3. Recovery:
+Actions after detecting faulty instance/server:
+    - Stop sending more workload
+    - Restart the server
+    - Rollback - rolling back to the stable version
+
+
+
+
+
+
+
