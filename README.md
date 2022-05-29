@@ -55,11 +55,11 @@ Features of the system. these doesnt dictate the System architecture. These fuct
 
 ##### **2. Non Functional Requirement:**
 Quality Attirbutes of the System, and this dictates the architecture of the system. few to name,
-Scalability, Availability, Reliability, Performance, Security... [More details]() 
+Scalability, Availability, Reliability, Performance, Security... [More details](https://github.com/vishnukumarbp/System-Architect_Design/blob/main/README.md#quality-attributes) 
 
 ##### **3. System contraints:**
 Limitation and boundaries to consider while design the architecture
-Time limit constraints, staffing constraints, budget constraints etc., [More details]() 
+Time limit constraints, staffing constraints, budget constraints etc., [More details](https://github.com/vishnukumarbp/System-Architect_Design/blob/main/README.md#system-constraints) 
 
 
 ### Feature Requirement: Step by Step Process
@@ -81,7 +81,7 @@ These steps are represented using UML or Sequence diagram. Sequance diagration i
 These diagram helps to design the API interaction required from the the actors. 
 
 
-### Quality Attributes:
+### Non Functional Requirement (Quality Attributes):
 Provides the quality measures on how well our system perform on a particular dimension
 Architecture of the system is designed/redesigned mainly because of the non functional requirements (quality attributes of the system). 
 For eg: system is redesigned when
@@ -123,5 +123,7 @@ Three type of constraints:
     - so spend enough time to decide on the constraints before starting
 * Use loosely coupled architecture
     - Rather creating tightly coupled architecture between our application and third party apis, creating a loosely coupled archecture, so that we can change if required i the later run.
+
+
 
 
