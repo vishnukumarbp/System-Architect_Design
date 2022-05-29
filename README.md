@@ -235,4 +235,29 @@ So increasing engineers working on a system will help to scale the system faster
 or break code base into monolithic into multiple services.
 
 
+### Availablity:
+Most important attribute while designing a system. A fraction of time/probability that our service is operationally functional and accessible to the end user.
 
+`Availability (%) = uptime / (uptime + downtime)`
+
+MTBF => Mean Time Between Failure (Uptime)
+- Represent the avg operation time
+- Useful, when dealing with multiple hardward and its shelf life
+- not calculated when dealin with cloud or thrid part api
+
+MTTR => Mean Time To Recover
+- Time average takes us to detect and recover from a failure
+- Average downtime
+
+`Availability (%) = MTBF / (MTBF + MTTR)`
+
+It has impact on both Users and Business.
+
+If user faces issues while accessing our system or while making payment, we lose customers. it has more impact when the system is health or aircraft releated, we put users life in danger.
+
+Similarly, if the business provides services to other business and provide low available product, they lose businesses. it will have impact on overall business.
+
+90% is a high number, but in reality, 2h 24m and 36 days in a year is not acceptable.
+99.9 is referred as 3 "nines"
+99.99 is referred as 4 "nines"
+<img width="1084" alt="image" src="https://user-images.githubusercontent.com/10495294/170861938-3c96150a-98e9-42e8-939b-57492f09be5d.png">
