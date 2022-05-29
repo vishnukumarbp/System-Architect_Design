@@ -302,7 +302,31 @@ Actions after detecting faulty instance/server:
     - Restart the server
     - Rollback - rolling back to the stable version
 
+## SLA, SLO, SLI
 
+### SLA:
+**Service Level Agreement** between service provider and Client/User (it is an legal agreement)
+
+Promise made to our Users interms of our quality service we provide
+- Avaialbilty
+- Performance
+- Data durability
+- Time to response to system failures
+
+It also states, the pernalities and financial consequences if we fail to meet.
+
+### SLO:
+**Service Level Objectives:** Individual Goal set for our system. Each SLO represent a target value/range we need to meet. 
+
+For eg:
+- Availability of 3 nines,
+- Average response time SLO to be less than 100ms at the 90th percentiles
+- Issue resolutions time between 24 and 48 hours
+
+
+### SLI:
+**Service Level Indicators:** Quantitative measures of our compliances with SLO's
+It is the actutal numbers measured from monitoring systems or logs
 
 
 
