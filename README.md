@@ -51,15 +51,15 @@ Classify the requirement beased on three different categories, also refered as A
 3. Limitation and boundaries: System contraints
 
 ##### **1. Functional Requirement:**
-Features of the system. these doesnt dictate the System architecture. These fuctions/features takes input or action and output result
+Features of the system. these doesnt dictate the System architecture. These fuctions/features takes input or action and output result [More details](https://github.com/vishnukumarbp/System-Architect_Design/blob/main/README.md#feature-requirement-step-by-step-process)
 
 ##### **2. Non Functional Requirement:**
 Quality Attirbutes of the System, and this dictates the architecture of the system. few to name,
-Scalability, Availability, Reliability, Performance, Security...
+Scalability, Availability, Reliability, Performance, Security... [More details]() 
 
 ##### **3. System contraints:**
 Limitation and boundaries to consider while design the architecture
-Time limit constraints, staffing constraints, budget constraints etc.,
+Time limit constraints, staffing constraints, budget constraints etc., [More details]() 
 
 
 ### Feature Requirement: Step by Step Process
@@ -79,4 +79,49 @@ More powerful methods of the requirement gatherings are,
 
 These steps are represented using UML or Sequence diagram. Sequance diagration is a visual documentation of interaction between actor and the different component of the system. 
 These diagram helps to design the API interaction required from the the actors. 
+
+
+### Quality Attributes:
+Provides the quality measures on how well our system perform on a particular dimension
+Architecture of the system is designed/redesigned mainly because of the non functional requirements (quality attributes of the system). 
+For eg: system is redesigned when
+it is not fast enough
+not secure
+hart to maintain
+not scalable
+slow to develop
+
+Examples:
+Availability Quality attribute
+Online store must be **available** for user to request for atleast **99.9% of the time**
+
+Deployability quality attribute
+Development team can **deploy new version** of the product atleast **twice a week**
+
+#### Considerations:
+- Quality attributes need to be **MEASURABLE** **TESTABLE** (for eg: api response in <1 sec)
+- Tradeoffs
+    * there isnt a single architecture which satisfies all the requirements
+    * certain attributes contradict with one another
+    * Some combination is very hard to achieve or impossible
+    * As an architect we have to make RIGHT TRADEOFF based on the priority and importance to achieve the highest chance for success
+- Feasibility - Feasibility of the requirement, either technically impossible or prohibitively expensive to implement. for eg: expecting 100% availability, and high quality streaming on low bandwidth area
+
+
+### System Constraints:
+A System constraints is essentially a decision that was already either fully or partially made for us, restricting our degrees of freedom.
+
+Three type of constraints:
+1. Technical Constraints (Particular programming language, infra license, limited resources) - In many cases they do affect the decision we make for our architecture. For eg, for security reason, having on premises infra, makes cloud architecuturea / paradigm and solutions unavailable for us. 
+2. Business Constraints (Limited budget and deadline, first to market)
+3. Regulatory/Legal Constraints (in US HIPAA, in Europe GDPR)
+
+#### Considerations:
+* We shouldnt take any constraints lightly
+    - Regulatory constraints are hard to skip, but with right justification we have extend the deadline or budget. 
+    - Once we accept the constraint, it is very hard to skip them once we have build the system
+    - so spend enough time to decide on the constraints before starting
+* Use loosely coupled architecture
+    - Rather creating tightly coupled architecture between our application and third party apis, creating a loosely coupled archecture, so that we can change if required i the later run.
+
 
