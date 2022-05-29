@@ -125,7 +125,66 @@ Three type of constraints:
     - Rather creating tightly coupled architecture between our application and third party apis, creating a loosely coupled archecture, so that we can change if required i the later run.
 
 
+## Quality Attributes in Details
+Quality Attributes is huge. We will be focusing on those important attributes in details used in large scale architecture.
+1. Performance
+2. Scalability
+3. Availability
+
+others are, Maintainability, Deployability, Usabiliy, Testability, Reliability, Portability, Security etc.,
+
+### Performance:
+This is measured by Response time and throughput, 
+
+##### Response Time (End to End Latency): 
+ie, time taken between a client sending a request and receiving the response.
+
+`Response Time = Processing Time + Waiting Time (latency)` 
+
+_Processing Time -> Amount of time spend on our system to process, query, build response_
+_Waiting Time (sometime referred as latency) -> Duration of the time request/response spends **inactively** on our system, i.e, network latency, gateways, and queues_
 
 
+##### Throughput:
+Amount of work/task performed by the system at a time
+    * measured by task per second
+or Amount of data processed by the system per unit of time
+    * measured by bits/sec, bytes/sec, mbytes/sec, gb/sec
+    
 
+#### Considerations:
+1. Measure the response time correctly.
+2. Response time distribution
+3. Performance Degradation
 
+##### **1. Measure the response time correctly:**
+Calculate both processing and waiting time to derive response time/avg response time
+
+##### **2. Response time distribution:**
+To measure the response time and derive the performance, we can use Response time distribution. 
+Recommended to use Histogram to derive the percentile distribution chart.
+Percentile distributions is `the xth percentile is the value below which x% of the value can be found`
+
+<img width="1084" alt="image" src="https://user-images.githubusercontent.com/10495294/170855912-31c5b64e-b605-4b7f-990d-dec1ff7d5d3c.png">
+
+**Tail Latency**
+<img width="1084" alt="image" src="https://user-images.githubusercontent.com/10495294/170855927-1657d237-e83c-4905-ba90-d3daeae7df43.png">
+Shorter the tail latency better the response time (performance)
+
+--- Considerations
+Define the response time goal using percentiles, for eg: 30ms at 95th percentiles of the response time
+
+Measure and compare the goal using percentailes distributions
+
+##### **3. Performance Degradation:**
+Degradation point from where the performance starting degrade significantly as the load increases (Refer below graph)
+
+<img width="1084" alt="image" src="https://user-images.githubusercontent.com/10495294/170856218-efd2756f-2693-4096-9304-fcb72c5b3305.png">
+
+There could two way it degrades, drastically, or gradually.
+Drastically means, High utilizations of resources. for eg:
+* High CPU utilization
+* High Memory utilization
+* Message queues at capacity
+* Maximum number of IO connections
+* ...
