@@ -5,7 +5,7 @@
 A high level description about the _system structure_, _its components_ and _how those components interact with each other_ to meet the system _requirements_ and _constrainst_
 
 ##### _system structure:_
-High level structure of the end production with its components. No detail about technologies and programming languages
+High level structure of the end product with its components. No detail about technologies and programming languages
 
 ##### _requirements:_
 How the components together comes to do what system described to do
