@@ -329,6 +329,15 @@ For eg:
 It is the actutal numbers measured from monitoring systems or logs
 
 
+## API (Application Programming Interface):
+When designing our application, we will have a black box which contains two parts, 
+- Behaviour
+- Interface
 
+Behaviour is well defined. and interfaces through which external application or client application can communicate with the service.
 
+there are three categories of API's
+1. Public APIs (open APIs which can be accessed by anyone, but suggsted to have users registered to have control over)
+2. Private/Internal APIs (exposed to only selected services or interal services of the organization)
+3. Partner APIs (Exposed to only subscribed users/company)
 
