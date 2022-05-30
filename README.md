@@ -341,3 +341,5 @@ there are three categories of API's
 2. Private/Internal APIs (exposed to only selected services or interal services of the organization)
 3. Partner APIs (Exposed to only subscribed users/company)
 
+### RPC
+### REST (https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
