@@ -146,10 +146,10 @@ _Waiting Time (sometime referred as latency) -> Duration of the time request/res
 
 
 ##### Throughput:
-Amount of work/task performed by the system at a time
-    * measured by task per second
-or Amount of data processed by the system per unit of time
-    * measured by bits/sec, bytes/sec, mbytes/sec, gb/sec
+- Amount of work/task performed by the system at a time
+   * measured by task per second
+- or Amount of data processed by the system per unit of time
+   * measured by bits/sec, bytes/sec, mbytes/sec, gb/sec
     
 
 #### Considerations:
@@ -343,3 +343,64 @@ there are three categories of API's
 
 ### RPC
 ### REST (https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
+
+
+
+## LOAD BALANCER:
+
+This is an widely used component of system design almost 100% of the high volumn system. 
+Load balancer, as its name suggested, it is used to balanace the load (distribute) across multiple instances of the application. 
+
+### Quality Attributes
+Load balancer act as an abstract server which provides,
+- Scalability - Scaling features (auto scaling)
+- Performance - Mayb Add a little latency, but it is acceptable cost
+- High Availability - We can have monitoring features to detect and resolve unavailable instances
+- Maintainability - Since we can add and remove instances, new release can be rolled out easily one by one, called Rolling Release
+
+
+
+### Types of Load Balancer
+1. DNS (Domain Name System) Load Balancing
+2. Hardware Load Balancing
+3. Software Load Balancing
+4. Global Server Load Balancing
+
+
+#### DNS Load Balancing:
+DNS is part of Network Infrastructure. Used to resolve domain name to IP Addresses. One domain name can have mapping to multiple ip addresses. Phone book of the Internet.
+Comes as part of domain name, for free. but has few drawbacks. 
+- It doesnt monitor the health of our servers
+- Uses simple round robin strategy as balancing stragies, which doesnt help if one of our server is high performant or overloaded
+- Less secures, as it exposes the ip address to client application
+
+
+#### Hardware and Software Load Balancing
+Both are similar in their nature, and only difference is that we will have dedicated device designed and optimized to do only load balancing in hardware load balancing, while software load balancing is just a program designed to do load balancing which can run on any general purpose computer.
+
+Only the IP address of the load balancer is exposed to client application and load balancer will redirect the request to one or multiple services intelligently based on their
+- Health
+- Current load on the server
+- Number of open connections
+- its processing power
+
+One more important feature is that, 
+It can be used for internal communications incase of microservice architecture. where each service will act as an abastraction to multiple instance of particular service, and they can communicate with each other using the load balancer.
+
+Load balancer and servers are co-located. else we will be adding extra latency to the request and response.
+But in case of multiple data centers, we have to accept this latency as we will have the load balancer co-located to only one data center.
+
+This type of load balancer still need DNS to resolve to ip address. to overcome this issue, we have one more load balancer which is an hybrid between these two.
+
+#### Global Server Load Balancing:
+
+It is an hybrid between:
+DNS and Hardware/software load balancing.
+
+GSLB is an smart DNS service running between client applications and load balancers. Each request will go through GSLB which resolves the domain name to ip addresses.
+Most GSLB can be configured to route the traffic based on varity of strategies not just by physical locations.
+Since, GSLB is in constant communication with data centers, it can route the traffic based on,
+- nearby data center
+- Best-estimated response time
+- CPU load in each data center
+- Bandwidth between user and the data center
