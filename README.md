@@ -406,4 +406,26 @@ Since, GSLB is in constant communication with data centers, it can route the tra
 - Bandwidth between user and the data center
 
 
-#### [Load balancing Solutions](https://nagarro.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/learn/lecture/29603416#overview): 
+#### [Load balancing Solutions](https://nagarro.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/learn/lecture/29603416#overview)
+
+
+## MESSAGE BROKERS:
+Most fundamental building blocks for any Asynchronous Software Architecture.
+
+opposite of Synchronous communication where both sender and receiver should be in sync constantly to complete a request, it will get worse if the processing time is considerably longer.
+
+Message Broker: A software architectural building block which uses queued data structure to store messages between senders and receivers.
+
+It provides, 
+- Asynchronous Architecture
+- Buffering
+
+Generally Message broker follows Pub/Sub Pattern to store and steam messages. Multiple services can subscribe to single topic/message and perform asynchronous task. 
+
+In terms of Fault Tolarence, Message Broker provides High Availability by superior fault tolarence by storing messages in queue and stream when services are back online and prevents messages being lost.
+
+It add a little performance latency, as it adds significant indirection to two services
+
+[Solutions Available](https://nagarro.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/learn/lecture/29617964#overview)
+
+
