@@ -404,3 +404,6 @@ Since, GSLB is in constant communication with data centers, it can route the tra
 - Best-estimated response time
 - CPU load in each data center
 - Bandwidth between user and the data center
+
+
+#### [Load balancing Solutions](https://nagarro.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/learn/lecture/29603416#overview): 
