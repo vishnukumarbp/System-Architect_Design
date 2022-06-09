@@ -420,12 +420,36 @@ It provides,
 - Asynchronous Architecture
 - Buffering
 
-Generally Message broker follows Pub/Sub Pattern to store and steam messages. Multiple services can subscribe to single topic/message and perform asynchronous task. 
+Generally Message broker follows Pub/Sub Pattern to store and stream messages. Multiple services can subscribe to single topic/message and perform asynchronous task. 
 
 In terms of Fault Tolarence, Message Broker provides High Availability by superior fault tolarence by storing messages in queue and stream when services are back online and prevents messages being lost.
 
 It add a little performance latency, as it adds significant indirection to two services
 
-[Solutions Available](https://nagarro.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/learn/lecture/29617964#overview)
+#### [Solutions Available](https://nagarro.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/learn/lecture/29617964#overview)
+
+## API Gateway:
+API gateway is an service setup between client and server to redirect request based on the resource. This is used mainly when we have multiple services (micro services) handling tasks independently, client application has to call each services separately and should be aware of all the available services and its uri. By using API gateway, client can directly connect to API Gateway and request the resource. API Gateway will be aware of the available services, it will make call to each services and collect the response and responde it to the client.
 
 
+API Gateway follows API composition pattern to compose single api from collection of multiple api's from services.
+
+
+API Gateway works on Layer 7, i.e API Gateway will have the data and request uri, so it can directly work with the request uri and its data. on the other hand load balancer works are network layer (where it can read the data or uri)
+
+### Benifits:
+1. seamless integration/modification of internal service, For eg. if we want to support mobile devices, we can create service mobile apps, and redirect from api gateway, this way our web isnt affected
+2. Consolidating all the security, authentication and authorization in a single place
+3. Depending on the users permission, we can allow or redirect request to authorized services
+4. Rate limiting to avoid DoS
+5. Request Routing -> Single call to api gateway, and gateway will collect response from multiple services
+6. Caching
+7. Monitering and alerting
+8. Protocol Translation -> Client to API Gateway might use REST JSON, but API Gateway to service can be gRPC or SOAP
+
+### Anti Pattern
+- Never make api gatewat smart by adding business logic into it
+- API Gateway will become single point of failure, to avoid, deploy multiple instances of api gateway and place them behind the load balancer
+- By adding API Gateway we may add a small latency to the request, this might tempt sometime to bypass the api gateway, which is considered as anti pattern
+
+#### [Solutions Availables](https://nagarro.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/learn/lecture/29629912#overview)
