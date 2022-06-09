@@ -453,3 +453,29 @@ API Gateway works on Layer 7, i.e API Gateway will have the data and request uri
 - By adding API Gateway we may add a small latency to the request, this might tempt sometime to bypass the api gateway, which is considered as anti pattern
 
 #### [Solutions Availables](https://nagarro.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/learn/lecture/29629912#overview)
+
+
+## CDN (Content Delivery Network):
+
+CDN is a globally distributed network of servers which are strategically placed in various locations and speed up the delivery of the static content to the end users. CDN uses caching technique to cache the static content in multiple locations (which are called Edge). Based on the Users of the application, we can configure the Edge locations where the contents can be cached to reduce the latency between each request and allow the content to be loaded fast. 
+
+By using CDN, we can achieve, 
+- Performance - Faster page loads
+- High Availability - issues/slowness are less noticible, and cached content can still be serverd when the system is down
+- Security - Protection against Distributed Denial of Service attact (DDoS) as the attach is blocked at CDN level
+
+Static contents are, Images, Videos, HTML, CSS files and JavaScript
+
+### Content Publishing Strategies:
+1. Pull Strategy
+   - We need to tell CDN how offen the content need to be refreshed (cached) by setting TTL on each content
+   - Advantages: Lower maintenance, as we have to just set TTL, everything else is taken care of by CDN
+   - Disadvantages: When the content isnt cached, the first request by the user will take longer time to be served as CDN will load content from the server
+   - When the content is changed frequently, pull strategy is better
+2. Push Strategy
+   - It is our/server responsibility to push the content to CDN if the content need to be cached, and purge the cache if the content is changed
+   - Advantages: High Availability, Avoid the spike on the request as the server is responsible for updating the cache content
+   - Disadvantages: If any content is changing frequently, server has to publish new content to CDN more frequently
+
+#### [Solutions Availables](https://nagarro.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/learn/lecture/29629954#overview)
+
