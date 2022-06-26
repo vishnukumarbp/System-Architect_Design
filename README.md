@@ -62,7 +62,7 @@ Limitation and boundaries to consider while design the architecture
 Time limit constraints, staffing constraints, budget constraints etc., [More details](https://github.com/vishnukumarbp/System-Architect_Design/blob/main/README.md#system-constraints) 
 
 
-### Feature Requirement: Step by Step Process
+### Functional Requirement: Step by Step Process
 
 #### Gathering Requiremnet:
 Asking all the questions for the large scale product is not the right approach. There are different methods to gather requiremnets.
@@ -82,14 +82,19 @@ These diagram helps to design the API interaction required from the the actors.
 
 
 ### Non Functional Requirement (Quality Attributes):
-Provides the quality measures on how well our system perform on a particular dimension
-Architecture of the system is designed/redesigned mainly because of the non functional requirements (quality attributes of the system). 
+Provides the quality measures on how well our system perform on a particular dimension. Architecture of the system is designed/redesigned mainly because of the non functional requirements (quality attributes of the system). 
 For eg: system is redesigned when
+
 it is not fast enough
+
 not secure
+
 hart to maintain
+
 not scalable
+
 slow to develop
+
 
 Examples:
 Availability Quality attribute
@@ -118,11 +123,11 @@ Three type of constraints:
 
 #### Considerations:
 * We shouldnt take any constraints lightly
-    - Regulatory constraints are hard to skip, but with right justification we have extend the deadline or budget. 
+    - Regulatory constraints are hard to skip, but with right justification we can extend the deadline or budget. 
     - Once we accept the constraint, it is very hard to skip them once we have build the system
     - so spend enough time to decide on the constraints before starting
 * Use loosely coupled architecture
-    - Rather creating tightly coupled architecture between our application and third party apis, creating a loosely coupled archecture, so that we can change if required i the later run.
+    - Rather creating tightly coupled architecture between our application and third party apis, creating a loosely coupled archecture, so that we can change if required in the later run.
 
 
 ## Quality Attributes in Details
